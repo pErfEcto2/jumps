@@ -13,14 +13,14 @@ bool intersects(RectangleShape &rect1, RectangleShape &rect2) {
 }
 
 int main() {
-    int delay = 50000;
+    int delay = 10000;
     RenderWindow window(VideoMode(100, 100), "jumps", Style::Fullscreen);
     Event event;
 
     bool canJump = false;
     int speedY = 0;
     int speedX = 0;
-    int g = 5;
+    int g = 10;
 
     RectangleShape rect(Vector2f(100, 100));
     rect.setPosition(Vector2f(300, VideoMode::getDesktopMode().height - 130));
@@ -68,11 +68,11 @@ int main() {
         }
 
         if (Keyboard::isKeyPressed(Keyboard::D)) {
-            speedX = 50;
+            speedX = 40;
         }
 
         if (Keyboard::isKeyPressed(Keyboard::A)) {
-            speedX = -50;
+            speedX = -40;
         }
         
         if (rect.getPosition().x + speedX <= leftWall.getPosition().x + 30) {
